@@ -1,9 +1,16 @@
 #setting up files and tasks
 
+
+from functions import combined_function
     
 import schedule, time
 
 schedule.every(5).minutes.do(combined_function)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+
 
 #TASKS
 # 1 Scrape the Replit Community Hub for events and put them into a list. ok
@@ -15,4 +22,4 @@ schedule.every(5).minutes.do(combined_function)
 # 4 If an event of interest is scraped, email yourself (or a friend) with a hyperlink to the event.
     #Using Gmail ok
     #save password etc in Secrets ok
-# 5 Only email any new events.
+# 5 Only email any new events. ok
