@@ -6,7 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from replit import db
 
-
+#there is no error handling included
 
 
 def email_sending(title, date):
@@ -34,16 +34,21 @@ def email_sending(title, date):
         
 
 def save_new_item_in_database(title, date):
+
+    #Note that possibility of using same event name on different date has been ignored in this code
+    
     keys = db.keys()
     if title not in keys:
         db[title] = {"date": date}
         email_sending(title, date)
     else:
-        print("Nothing new found. (I should tell the time as well)")
+        print("Not a new event. (I should tell the time as well)")
 
 
 
 def web_crawler():
+    print("Crawling started")
+    print()
     URL = "https://replit.com/community-hub"
     
     response = requests.get(URL)
@@ -55,17 +60,16 @@ def web_crawler():
     cards = soup.find("div", {"class":"css-nghpcj"})
     titles = cards.find_all("span", {"class":"css-19l40in"})
     dates = cards.find_all("span", {"class":"css-1jm4vlb"})
+
     
     counter = 0
     for title in titles:
+        
+        #Note that this is still printing in console and might not be necessary later
+        
         print(title.text)
         for date in dates[counter]:
             print(date.text)
             counter += 1
         save_new_item_in_database(title.text, date.text)
-
-
-
-def combined_function():
-    web_crawler()
-    print()
+        print()

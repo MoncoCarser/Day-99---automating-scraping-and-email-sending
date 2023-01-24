@@ -403,6 +403,14 @@ doc = ["sphinx-rtd-theme (>=1.0.0)", "sphinx-autodoc-typehints (>=1.18.1)", "sph
 dev = ["build (>=0.7.0)", "pytest-timeout (>=2.1.0)", "pytest (>=7.0.1)"]
 
 [[package]]
+name = "schedule"
+version = "1.1.0"
+description = "Job scheduling for humans."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "soupsieve"
 version = "2.3.2.post1"
 description = "A modern CSS selector implementation for Beautiful Soup."
@@ -512,7 +520,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<3.9"
-content-hash = "f39bc958113d77fe6ab0210731ef208b579872560fd59a47de3d16dd07644a8c"
+content-hash = "79bfd8c8ec928ad125b278b0abb07af58a670b8e6e822f2b32697e36df81c3b3"
 
 [metadata.files]
 aiohttp = []
@@ -547,6 +555,7 @@ replit = []
 replit-python-lsp-server = []
 requests = []
 rope = []
+schedule = []
 soupsieve = []
 toml = []
 tomli = []
